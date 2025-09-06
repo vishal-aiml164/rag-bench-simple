@@ -1,0 +1,25 @@
+# Retriever settings (defaults). Individual experiments can override in experiments.yaml.
+retriever:
+  type: hybrid  # one of: bm25 | faiss | qdrant | hybrid
+  top_k: 20
+  alpha: 0.5   # blend sparse/dense for hybrid
+  chunk_size: 512
+  chunk_overlap: 10
+
+  embeddings:
+    name: al-mini-l6  # 'nomic' | 'snowflake-m' | 'mxbaai' | 'al-mini-l6' | domain models like 'biobert'
+    dim: 1536
+
+  sparse:
+    bm25:
+      k1: 1.5
+      b: 0.75
+
+  dense:
+    faiss:
+      index: "Flat"  # or "IVF4096,PQ64" etc.
+
+  qdrant:
+    url: "http://localhost:6333"
+    collection: "rag_bench"
+    recreate: false

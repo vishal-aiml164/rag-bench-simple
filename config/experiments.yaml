@@ -1,0 +1,12 @@
+dataset:
+  name: squad
+  subset: validation
+
+experiment:
+  retriever: faiss
+  rag_variant: naive_rag
+  embeddings: all-MiniLM-L6-v2
+  num_records: 10
+  top_k: 5
+  chunk_overlap: 0
+  chunk_size: 128
