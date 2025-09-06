@@ -12,10 +12,6 @@ venv/
 # Jupyter notebooks checkpoints
 .ipynb_checkpoints/
 
-# Data files
-data/output/
-data/results/
-
 # FAISS indices
 *.faiss
 *_docs.json
